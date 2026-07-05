@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 15px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-and-boxshadows);
+    font-weight: bold;
+    font-size: larger;
+}
+
+nav a:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease;
+}

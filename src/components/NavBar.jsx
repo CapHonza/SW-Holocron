@@ -1,0 +1,11 @@
+import { Link } from "react-router-dom"
+import "./NavBar.css"
+
+export default function NavBar() {
+    return (
+        <nav className="navbar">
+            <Link to="/">Domovská stránka</Link>
+            <Link to="/Catalog">Databáze postav</Link>
+        </nav>
+    )
+}

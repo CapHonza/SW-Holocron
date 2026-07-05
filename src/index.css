@@ -1,0 +1,15 @@
+:root {
+    --bg-color: #050505;
+    --text-and-boxshadows: #FFE81F;
+    --card-background: #1a1a1a;
+    --button: #BFAE15;
+    --footer-text: #998B12;
+    --main-text: #cccccc;
+}
+
+
+html, body {
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    margin: 0;
+}
