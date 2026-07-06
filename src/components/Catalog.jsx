@@ -27,20 +27,24 @@ export default function Catalog() {
             //* tzn. spustí se pouze jednou a to jen při prvním načtení stránky / komponenty, 
             //* jinak by se data stahovala neustále při každém kliknutí na tlačítko
 
-            //* PS.: Když tam bude závislost, tak se spustí, když si změní jedna z proměnných (závislostí) uvnitř
+            //* PS.: Když tam bude závislost, tak se spustí, když se změní jedna z proměnných (závislostí) uvnitř
 
     //* postava = parametr funkce (vymýšlím si ho sám)
-    //* Vezme první záznam, pojmenuje si ho dosšasně postava, zkontroluje if/else a propustí dál, veme druhý záznam, pojmenuje ho postava a znovu
+    //* Vezme první záznam, pojmenuje si ho dočasně postava, zkontroluje if/else 
+    //* a propustí dál, veme druhý záznam, pojmenuje ho postava a znovu
     const filteredCharacters = character.filter((postava) => { 
         if (activeCategory === 'všichni') {
             return true;
         } else if (activeCategory === 'jedi') {
-            return postava.affiliations?.includes("Jedi Order"); //* ? = Optional Chaining - některé postavy třeba vůbec nemají affiliations (zvířata např.)
+            return postava.affiliations?.includes("Jedi Order"); 
+            //* = Optional Chaining (?.) - některé postavy třeba vůbec nemají affiliations (zvířata např.)
         } else if (activeCategory === 'sith') {
-            return postava.affiliations?.includes('Sith'); //* Pokud by tam ? nebyl, JS by se snažil udělat metodu include na něčem, co neexistuje a aplikace by spadla
+            return postava.affiliations?.includes('Sith'); 
+            //* Pokud by tam ? nebyl, JS by se snažil udělat metodu includes() na něčem, co neexistuje a aplikace by spadla
         } else if (activeCategory === 'droid') {
-            return postava.species?.includes('droid') //* Říká: zkus se podívat do species, jestli to ta postava vůbec má, pokud ne, 
-                                                        //* vrať false a dál se ani nesnaž nic hledat, aby to nespadlo
+            return postava.species?.includes('droid') 
+            //* Říká: zkus se podívat do species, jestli to ta postava vůbec má, pokud ne, 
+            //* vrať false a dál se ani nesnaž nic hledat, aby to nespadlo
         } else if (activeCategory === 'others') {
             return !postava.affiliations?.includes('Jedi Order') && 
                     !postava.affiliations?.includes('Sith') &&
