@@ -41,3 +41,43 @@ h2 {
     font-weight: normal;
     margin-left: 6px;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    margin-bottom: 15px;
+
+}
+
+.buttons button {
+    background-color: var(--button);
+    border: none;
+    border-radius: 12px;
+    width: 160px;
+    height: 40px;
+
+    font-size: large;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease;
+    background-color: var(--text-and-boxshadows);
+    cursor: pointer;
+}
+
+button.active {
+    background-color: var(--text-and-boxshadows);
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        row-gap: 14px;
+        place-items: center;
+    }
+}
