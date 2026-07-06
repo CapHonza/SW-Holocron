@@ -1,0 +1,43 @@
+.body-wrapper {
+    color: var(--text-and-boxshadows);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 5px 0;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 10px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.character-card {
+    border: 1px solid var(--text-and-boxshadows);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.character-card img {
+    max-width: 100%; /* Nepoužívají se px, ale % -> tím říkáme, 
+    aby nikdy nebyl větší, než rodičovský kontejner */
+    height: 500px;
+    margin: 20px 0;
+    object-fit: cover;
+}
+
+.character-card:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease;
+}
+
+.value {
+    font-weight: normal;
+    margin-left: 6px;
+}
